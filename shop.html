@@ -1,0 +1,1160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fashgie Header + Offcanvas Menu + Cart</title>
+
+    <!-- Bootstrap latest -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons (lightweight icons) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Owl Carousel CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/responsive.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ===== Top bar (phone/email + promo + lang/currency/account) ===== -->
+    <div class="topbar d-none d-lg-block">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-between gap-3">
+          <!-- Left: phone/email (desktop only) -->
+          <div class="topbar-left d-none d-lg-flex align-items-center gap-3">
+            <span class="topbar-item">(+1) 1234-567-890</span>
+            <span class="topbar-item">Example@Domain.Com</span>
+          </div>
+
+          <!-- Center promo (desktop only) -->
+          <div class="topbar-center d-none d-lg-block">
+            <span class="topbar-promo">
+              Super sale up to 20% in this holiday <a href="#">Shop Now!</a>
+            </span>
+          </div>
+
+          <!-- Right: language/currency/account (all devices) -->
+          <div class="topbar-right d-flex align-items-center gap-2 ms-auto">
+            <div class="dropdown">
+              <button
+                class="btn btn-sm topbar-dd dropdown-toggle"
+                data-bs-toggle="dropdown"
+              >
+                En
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">EN</a></li>
+                <li><a class="dropdown-item" href="#">BN</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown">
+              <button
+                class="btn btn-sm topbar-dd dropdown-toggle"
+                data-bs-toggle="dropdown"
+              >
+                $ USD
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">USD</a></li>
+                <li><a class="dropdown-item" href="#">EUR</a></li>
+                <li><a class="dropdown-item" href="#">SAR</a></li>
+              </ul>
+            </div>
+
+            <a class="topbar-link" href="#">My Account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Mobile Header (visible only < lg) ===== -->
+    <div class="m-header d-lg-none">
+      <!-- Row 1: En / USD / My Account -->
+      <div class="m-top">
+        <div class="container-fluid">
+          <div class="d-flex justify-content-end align-items-center gap-3">
+            <div class="dropdown">
+              <button
+                class="btn btn-sm m-dd dropdown-toggle"
+                data-bs-toggle="dropdown"
+              >
+                En
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">EN</a></li>
+                <li><a class="dropdown-item" href="#">BN</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown">
+              <button
+                class="btn btn-sm m-dd dropdown-toggle"
+                data-bs-toggle="dropdown"
+              >
+                $ USD
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">USD</a></li>
+                <li><a class="dropdown-item" href="#">EUR</a></li>
+                <li><a class="dropdown-item" href="#">SAR</a></li>
+              </ul>
+            </div>
+
+            <a class="m-account" href="#">My Account</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: hamburger / logo / cart -->
+      <div class="m-mid">
+        <div class="container-fluid">
+          <div class="d-flex align-items-center justify-content-between">
+            <button
+              class="m-menu-btn"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasMenu"
+              aria-controls="offcanvasMenu"
+            >
+              <i class="bi bi-list"></i>
+            </button>
+
+            <a href="#" class="m-logo">FASHGIE</a>
+
+            <button
+              class="m-cart-btn"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasCart"
+              aria-controls="offcanvasCart"
+            >
+              <i class="bi bi-bag"></i>
+              <span class="m-cart-count" id="cartCountMobile">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: full width search -->
+      <div class="m-search">
+        <div class="container-fluid">
+          <div class="m-search-wrap">
+            <input
+              class="form-control m-search-input"
+              type="text"
+              placeholder="Search Product Here..."
+            />
+            <button class="m-search-btn" type="button" aria-label="Search">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Middle header (search + menu icon + logo + right icons) ===== -->
+    <header class="header-mid d-none d-lg-block">
+      <div class="container-fluid">
+        <div class="row align-items-center g-2">
+          <div class="col-8 col-lg-3">
+            <div class="search-wrap">
+              <input
+                class="form-control search-input"
+                type="text"
+                placeholder="Search Product Here..."
+              />
+              <button class="search-btn" type="button" aria-label="Search">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-4 col-lg-1 text-end text-lg-center">
+            <!-- Click = Left Offcanvas menu -->
+            <button
+              class="menu-btn"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasMenu"
+              aria-controls="offcanvasMenu"
+              id="menuToggleBtn"
+            >
+              <i class="bi bi-list"></i>
+            </button>
+
+            <!-- Hover = Desktop mega menu trigger (same icon) -->
+            <div class="menu-hover dropdown d-none d-lg-inline-block">
+              <button
+                class="menu-hover-btn"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <!-- invisible button only for hover target -->
+              </button>
+
+              <!-- Mega menu (hover show) -->
+              <div class="dropdown-menu mega-menu p-0" id="megaMenu">
+                <div class="mega-inner">
+                  <div class="row g-0">
+                    <div class="col-lg-8 mega-cols">
+                      <div class="row g-0">
+                        <div class="col-6 col-lg-3 mega-col">
+                          <h6 class="mega-title">Men</h6>
+                          <a class="mega-link" href="#">Formal Shirts</a>
+                          <a class="mega-link" href="#">Formal Trousers</a>
+                          <a class="mega-link" href="#">Hat</a>
+                          <a class="mega-link" href="#">Loungewear</a>
+                          <a class="mega-link" href="#">Formal Accessories</a>
+                        </div>
+
+                        <div class="col-6 col-lg-3 mega-col">
+                          <h6 class="mega-title">Women</h6>
+                          <a class="mega-link" href="#">Jackets & Coats</a>
+                          <a class="mega-link" href="#">Shirts</a>
+                          <a class="mega-link" href="#">Jumpers & Knitwear</a>
+                          <a class="mega-link" href="#">Pyjamas & Nightwear</a>
+                          <a class="mega-link" href="#">Jeans</a>
+                        </div>
+
+                        <div class="col-6 col-lg-3 mega-col">
+                          <h6 class="mega-title">Kids</h6>
+                          <a class="mega-link" href="#">All Winter Wear</a>
+                          <a class="mega-link" href="#"
+                            >Sweatshirts & Hoodies</a
+                          >
+                          <a class="mega-link" href="#">Coats & Jackets</a>
+                          <a class="mega-link" href="#">Trousers & Pants</a>
+                          <a class="mega-link" href="#">Shorts & Skirts</a>
+                        </div>
+
+                        <div class="col-6 col-lg-3 mega-col">
+                          <h6 class="mega-title">Sports</h6>
+                          <a class="mega-link" href="#">Hiking and Trekking</a>
+                          <a class="mega-link" href="#">Wildlife Watching</a>
+                          <a class="mega-link" href="#">Snowboarding</a>
+                          <a class="mega-link" href="#">Horse Riding</a>
+                          <a class="mega-link" href="#">Fishing</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 mega-banner">
+                      <div class="mega-banner-card">
+                        <div class="mega-banner-text">
+                          <div class="mega-banner-title">
+                            Women’s Designers<br />Collection Clothes
+                          </div>
+                          <a class="mega-banner-cta" href="#">SHOP NOW →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 d-none d-lg-block text-center">
+            <a href="#" class="brand">FASHGIE</a>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <div class="header-icons">
+              <a href="#" class="icon-btn" title="Compare">
+                <i class="bi bi-arrow-left-right"></i
+                ><span class="badge-dot" id="compareCount">1</span>
+              </a>
+              <a href="#" class="icon-btn" title="Wishlist">
+                <i class="bi bi-heart"></i
+                ><span class="badge-dot" id="wishCount">0</span>
+              </a>
+
+              <!-- Cart open (Right Offcanvas) -->
+              <button
+                class="icon-btn cart-btn"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasCart"
+                aria-controls="offcanvasCart"
+              >
+                <i class="bi bi-bag"></i>
+                <span class="cart-text"
+                  >Item(<span id="cartCount">0</span>) - $<span
+                    id="cartMiniTotal"
+                    >0.00</span
+                  ></span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== Black navbar (desktop) ===== -->
+    <nav class="main-nav d-none d-lg-block">
+      <div class="container-fluid">
+        <ul class="nav justify-content-center gap-4">
+          <li class="nav-item">
+            <a class="nav-link main-nav-link" href="#">CLOTHES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link main-nav-link" href="#">SHOES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link main-nav-link" href="#">SHIRTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link main-nav-link" href="#">GOGALS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link main-nav-link" href="#">JEANS</a>
+          </li>
+
+          <li class="nav-item dropdown dropdown-hover">
+            <a
+              class="nav-link main-nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              >MORE</a
+            >
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+              <li><a class="dropdown-item" href="#">Accessories</a></li>
+              <li><a class="dropdown-item" href="#">Sale</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+
+
+<!-- Shop Page Body Start -->
+<main class="py-4 shop-page">
+  <div class="container">
+    <div class="row">
+
+      <!-- LEFT SIDEBAR : FILTERS -->
+      <aside class="col-lg-3 mb-4">
+        <!-- Categories -->
+        <div class="card mb-3">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <span class="fw-semibold">Categories</span>
+          </div>
+          <div class="list-group list-group-flush small">
+            <label class="list-group-item d-flex justify-content-between align-items-center">
+              <span>Men’s Fashion</span>
+              <span class="badge bg-light text-muted rounded-pill">24</span>
+            </label>
+            <label class="list-group-item d-flex justify-content-between align-items-center">
+              <span>Women’s Fashion</span>
+              <span class="badge bg-light text-muted rounded-pill">18</span>
+            </label>
+            <label class="list-group-item d-flex justify-content-between align-items-center">
+              <span>Electronics</span>
+              <span class="badge bg-light text-muted rounded-pill">32</span>
+            </label>
+            <label class="list-group-item d-flex justify-content-between align-items-center">
+              <span>Home &amp; Living</span>
+              <span class="badge bg-light text-muted rounded-pill">12</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Brand Filter -->
+        <div class="card mb-3">
+          <div class="card-header">
+            <span class="fw-semibold">Brand</span>
+          </div>
+          <div class="card-body">
+            <div class="mb-2">
+              <input type="text" class="form-control form-control-sm" placeholder="Search brand..." id="brandSearch">
+            </div>
+            <div class="brands-list small" id="brandList">
+              <div class="form-check mb-1">
+                <input class="form-check-input brand-filter" type="checkbox" value="Nike" id="brandNike">
+                <label class="form-check-label" for="brandNike">Nike</label>
+              </div>
+              <div class="form-check mb-1">
+                <input class="form-check-input brand-filter" type="checkbox" value="Adidas" id="brandAdidas">
+                <label class="form-check-label" for="brandAdidas">Adidas</label>
+              </div>
+              <div class="form-check mb-1">
+                <input class="form-check-input brand-filter" type="checkbox" value="Apple" id="brandApple">
+                <label class="form-check-label" for="brandApple">Apple</label>
+              </div>
+              <div class="form-check mb-1">
+                <input class="form-check-input brand-filter" type="checkbox" value="Samsung" id="brandSamsung">
+                <label class="form-check-label" for="brandSamsung">Samsung</label>
+              </div>
+              <div class="form-check mb-1">
+                <input class="form-check-input brand-filter" type="checkbox" value="Sony" id="brandSony">
+                <label class="form-check-label" for="brandSony">Sony</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Price Range -->
+        <div class="card">
+          <div class="card-header">
+            <span class="fw-semibold">Price Range</span>
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center small mb-2">
+              <span>৳ <span id="minPriceLabel">0</span></span>
+              <span>৳ <span id="maxPriceLabel">5000</span></span>
+            </div>
+
+            <div class="range-slider-wrapper mb-2">
+              <input type="range" min="0" max="5000" value="0" id="minPrice" class="form-range">
+              <input type="range" min="0" max="5000" value="5000" id="maxPrice" class="form-range">
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <input type="number" class="form-control form-control-sm me-2" id="minPriceInput" value="0">
+              <input type="number" class="form-control form-control-sm" id="maxPriceInput" value="5000">
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT SECTION : PRODUCT AREA -->
+      <section class="col-lg-9">
+
+        <!-- Top Controls -->
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+          <div class="small text-muted">
+            Showing <span id="productCount">0</span> products
+          </div>
+
+          <div class="d-flex flex-wrap align-items-center gap-2">
+
+            <!-- Sort -->
+            <div class="d-flex align-items-center">
+              <label class="me-2 small text-muted mb-0">Sort by:</label>
+              <select class="form-select form-select-sm" id="sortSelect">
+                <option value="latest" selected>Latest</option>
+                <option value="priceLowHigh">Price: Low → High</option>
+                <option value="priceHighLow">Price: High → Low</option>
+              </select>
+            </div>
+
+            <!-- View Toggle -->
+            <div class="btn-group btn-group-sm" role="group" aria-label="View toggle">
+              <button type="button" class="btn btn-outline-secondary active" id="gridViewBtn">
+                <i class="bi bi-grid-3x3-gap"></i>
+              </button>
+              <button type="button" class="btn btn-outline-secondary" id="listViewBtn">
+                <i class="bi bi-list-ul"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product List Wrapper -->
+        <div class="row g-3" id="productsWrapper">
+          
+          <!-- Product Card -->
+          <div class="col-md-4 col-sm-6 product-item" 
+               data-price="2490" 
+               data-brand="Nike" 
+               data-date="2026-01-25">
+            <article class="card product-card h-100">
+              <div class="product-media position-relative">
+                <span class="badge bg-danger position-absolute top-0 start-0 m-2 small">-25%</span>
+
+                <img src="assets/images/product/bag_01.jpg" 
+                     class="card-img-top" alt="Product 1">
+
+                <!-- Overlay image (optional) -->
+                <img src="assets/images/product/bag_02.jpg" 
+                     class="product-img-overlay" alt="Product 1 Hover">
+
+                <!-- Action Icons -->
+                <div class="product-actions-top">
+                  <button class="btn btn-light btn-sm" type="button" aria-label="Wishlist">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                  <button class="btn btn-light btn-sm" type="button" aria-label="Compare">
+                    <i class="bi bi-shuffle"></i>
+                  </button>
+                </div>
+
+                <!-- Add to Cart -->
+                <button class="btn btn-dark btn-sm product-addtocart-btn" type="button">
+                  Add to Cart
+                </button>
+              </div>
+
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title mb-1 text-truncate" title="Nike Air Zoom Alpha">
+                  Nike Air Zoom Alpha
+                </h6>
+                <div class="small text-muted mb-1">Nike</div>
+
+                <!-- Rating -->
+                <div class="product-rating small mb-2">
+                  <span class="text-warning">
+                    ★★★★☆
+                  </span>
+                  <span class="text-muted">(32)</span>
+                </div>
+
+                <!-- Price -->
+                <div class="mt-auto">
+                  <div class="d-flex align-items-baseline gap-2">
+                    <span class="text-danger fw-semibold">৳ 1,867</span>
+                    <span class="text-muted text-decoration-line-through small">৳ 2,490</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Repeat product-item with different data-price, data-brand, data-date -->
+          <div class="col-md-4 col-sm-6 product-item" 
+               data-price="1490" 
+               data-brand="Adidas" 
+               data-date="2026-01-30">
+            <article class="card product-card h-100">
+              <div class="product-media position-relative">
+                <span class="badge bg-success position-absolute top-0 start-0 m-2 small">-10%</span>
+                <img src="assets/images/product/glass_01.jpg" 
+                     class="card-img-top" alt="Product 2">
+                <img src="assets/images/product/glass_02.jpg" 
+                     class="product-img-overlay" alt="Product 2 Hover">
+
+                <div class="product-actions-top">
+                  <button class="btn btn-light btn-sm" type="button">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                  <button class="btn btn-light btn-sm" type="button">
+                    <i class="bi bi-shuffle"></i>
+                  </button>
+                </div>
+                <button class="btn btn-dark btn-sm product-addtocart-btn" type="button">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title mb-1 text-truncate" title="Adidas Runner X">
+                  Adidas Runner X
+                </h6>
+                <div class="small text-muted mb-1">Adidas</div>
+                <div class="product-rating small mb-2">
+                  <span class="text-warning">★★★★☆</span>
+                  <span class="text-muted">(21)</span>
+                </div>
+                <div class="mt-auto">
+                  <div class="d-flex align-items-baseline gap-2">
+                    <span class="text-danger fw-semibold">৳ 1,341</span>
+                    <span class="text-muted text-decoration-line-through small">৳ 1,490</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4 col-sm-6 product-item" 
+               data-price="3990" 
+               data-brand="Apple" 
+               data-date="2026-01-10">
+            <article class="card product-card h-100">
+              <div class="product-media position-relative">
+                <span class="badge bg-primary position-absolute top-0 start-0 m-2 small">New</span>
+                <img src="assets/images/product/women_bag.jpg" 
+                     class="card-img-top" alt="Product 3">
+                <img src="assets/images/product/women_bag2.jpg" 
+                     class="product-img-overlay" alt="Product 3 Hover">
+                <div class="product-actions-top">
+                  <button class="btn btn-light btn-sm" type="button">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                  <button class="btn btn-light btn-sm" type="button">
+                    <i class="bi bi-shuffle"></i>
+                  </button>
+                </div>
+                <button class="btn btn-dark btn-sm product-addtocart-btn" type="button">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title mb-1 text-truncate" title="Apple AirPods Pro">
+                  Apple AirPods Pro
+                </h6>
+                <div class="small text-muted mb-1">Apple</div>
+                <div class="product-rating small mb-2">
+                  <span class="text-warning">★★★★★</span>
+                  <span class="text-muted">(87)</span>
+                </div>
+                <div class="mt-auto">
+                  <div class="d-flex align-items-baseline gap-2">
+                    <span class="text-danger fw-semibold">৳ 3,990</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4 col-sm-6 product-item" 
+               data-price="3990" 
+               data-brand="Apple" 
+               data-date="2026-01-10">
+            <article class="card product-card h-100">
+              <div class="product-media position-relative">
+                <span class="badge bg-primary position-absolute top-0 start-0 m-2 small">New</span>
+                <img src="assets/images/product/women_bag.jpg" 
+                     class="card-img-top" alt="Product 3">
+                <img src="assets/images/product/women_bag2.jpg" 
+                     class="product-img-overlay" alt="Product 3 Hover">
+                <div class="product-actions-top">
+                  <button class="btn btn-light btn-sm" type="button">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                  <button class="btn btn-light btn-sm" type="button">
+                    <i class="bi bi-shuffle"></i>
+                  </button>
+                </div>
+                <button class="btn btn-dark btn-sm product-addtocart-btn" type="button">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title mb-1 text-truncate" title="Apple AirPods Pro">
+                  Apple AirPods Pro
+                </h6>
+                <div class="small text-muted mb-1">Apple</div>
+                <div class="product-rating small mb-2">
+                  <span class="text-warning">★★★★★</span>
+                  <span class="text-muted">(87)</span>
+                </div>
+                <div class="mt-auto">
+                  <div class="d-flex align-items-baseline gap-2">
+                    <span class="text-danger fw-semibold">৳ 3,990</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4 col-sm-6 product-item" 
+               data-price="3990" 
+               data-brand="Apple" 
+               data-date="2026-01-10">
+            <article class="card product-card h-100">
+              <div class="product-media position-relative">
+                <span class="badge bg-primary position-absolute top-0 start-0 m-2 small">New</span>
+                <img src="assets/images/product/women_bag.jpg" 
+                     class="card-img-top" alt="Product 3">
+                <img src="assets/images/product/women_bag2.jpg" 
+                     class="product-img-overlay" alt="Product 3 Hover">
+                <div class="product-actions-top">
+                  <button class="btn btn-light btn-sm" type="button">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                  <button class="btn btn-light btn-sm" type="button">
+                    <i class="bi bi-shuffle"></i>
+                  </button>
+                </div>
+                <button class="btn btn-dark btn-sm product-addtocart-btn" type="button">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title mb-1 text-truncate" title="Apple AirPods Pro">
+                  Apple AirPods Pro
+                </h6>
+                <div class="small text-muted mb-1">Apple</div>
+                <div class="product-rating small mb-2">
+                  <span class="text-warning">★★★★★</span>
+                  <span class="text-muted">(87)</span>
+                </div>
+                <div class="mt-auto">
+                  <div class="d-flex align-items-baseline gap-2">
+                    <span class="text-danger fw-semibold">৳ 3,990</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4 col-sm-6 product-item" 
+               data-price="3990" 
+               data-brand="Apple" 
+               data-date="2026-01-10">
+            <article class="card product-card h-100">
+              <div class="product-media position-relative">
+                <span class="badge bg-primary position-absolute top-0 start-0 m-2 small">New</span>
+                <img src="assets/images/product/women_bag.jpg" 
+                     class="card-img-top" alt="Product 3">
+                <img src="assets/images/product/women_bag2.jpg" 
+                     class="product-img-overlay" alt="Product 3 Hover">
+                <div class="product-actions-top">
+                  <button class="btn btn-light btn-sm" type="button">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                  <button class="btn btn-light btn-sm" type="button">
+                    <i class="bi bi-shuffle"></i>
+                  </button>
+                </div>
+                <button class="btn btn-dark btn-sm product-addtocart-btn" type="button">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title mb-1 text-truncate" title="Apple AirPods Pro">
+                  Apple AirPods Pro
+                </h6>
+                <div class="small text-muted mb-1">Apple</div>
+                <div class="product-rating small mb-2">
+                  <span class="text-warning">★★★★★</span>
+                  <span class="text-muted">(87)</span>
+                </div>
+                <div class="mt-auto">
+                  <div class="d-flex align-items-baseline gap-2">
+                    <span class="text-danger fw-semibold">৳ 3,990</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+
+          <div class="col-md-4 col-sm-6 product-item" 
+               data-price="3990" 
+               data-brand="Apple" 
+               data-date="2026-01-10">
+            <article class="card product-card h-100">
+              <div class="product-media position-relative">
+                <span class="badge bg-primary position-absolute top-0 start-0 m-2 small">New</span>
+                <img src="assets/images/product/women_bag.jpg" 
+                     class="card-img-top" alt="Product 3">
+                <img src="assets/images/product/women_bag2.jpg" 
+                     class="product-img-overlay" alt="Product 3 Hover">
+                <div class="product-actions-top">
+                  <button class="btn btn-light btn-sm" type="button">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                  <button class="btn btn-light btn-sm" type="button">
+                    <i class="bi bi-shuffle"></i>
+                  </button>
+                </div>
+                <button class="btn btn-dark btn-sm product-addtocart-btn" type="button">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title mb-1 text-truncate" title="Apple AirPods Pro">
+                  Apple AirPods Pro
+                </h6>
+                <div class="small text-muted mb-1">Apple</div>
+                <div class="product-rating small mb-2">
+                  <span class="text-warning">★★★★★</span>
+                  <span class="text-muted">(87)</span>
+                </div>
+                <div class="mt-auto">
+                  <div class="d-flex align-items-baseline gap-2">
+                    <span class="text-danger fw-semibold">৳ 3,990</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4 col-sm-6 product-item" 
+               data-price="3990" 
+               data-brand="Apple" 
+               data-date="2026-01-10">
+            <article class="card product-card h-100">
+              <div class="product-media position-relative">
+                <span class="badge bg-primary position-absolute top-0 start-0 m-2 small">New</span>
+                <img src="assets/images/product/women_bag.jpg" 
+                     class="card-img-top" alt="Product 3">
+                <img src="assets/images/product/women_bag2.jpg" 
+                     class="product-img-overlay" alt="Product 3 Hover">
+                <div class="product-actions-top">
+                  <button class="btn btn-light btn-sm" type="button">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                  <button class="btn btn-light btn-sm" type="button">
+                    <i class="bi bi-shuffle"></i>
+                  </button>
+                </div>
+                <button class="btn btn-dark btn-sm product-addtocart-btn" type="button">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title mb-1 text-truncate" title="Apple AirPods Pro">
+                  Apple AirPods Pro
+                </h6>
+                <div class="small text-muted mb-1">Apple</div>
+                <div class="product-rating small mb-2">
+                  <span class="text-warning">★★★★★</span>
+                  <span class="text-muted">(87)</span>
+                </div>
+                <div class="mt-auto">
+                  <div class="d-flex align-items-baseline gap-2">
+                    <span class="text-danger fw-semibold">৳ 3,990</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4 col-sm-6 product-item" 
+               data-price="3990" 
+               data-brand="Apple" 
+               data-date="2026-01-10">
+            <article class="card product-card h-100">
+              <div class="product-media position-relative">
+                <span class="badge bg-primary position-absolute top-0 start-0 m-2 small">New</span>
+                <img src="assets/images/product/women_bag.jpg" 
+                     class="card-img-top" alt="Product 3">
+                <img src="assets/images/product/women_bag2.jpg" 
+                     class="product-img-overlay" alt="Product 3 Hover">
+                <div class="product-actions-top">
+                  <button class="btn btn-light btn-sm" type="button">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                  <button class="btn btn-light btn-sm" type="button">
+                    <i class="bi bi-shuffle"></i>
+                  </button>
+                </div>
+                <button class="btn btn-dark btn-sm product-addtocart-btn" type="button">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title mb-1 text-truncate" title="Apple AirPods Pro">
+                  Apple AirPods Pro
+                </h6>
+                <div class="small text-muted mb-1">Apple</div>
+                <div class="product-rating small mb-2">
+                  <span class="text-warning">★★★★★</span>
+                  <span class="text-muted">(87)</span>
+                </div>
+                <div class="mt-auto">
+                  <div class="d-flex align-items-baseline gap-2">
+                    <span class="text-danger fw-semibold">৳ 3,990</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- ... more product-item ... -->
+
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+<!-- Shop Page Body End -->
+
+
+
+
+
+
+
+    
+
+    <footer class="site-footer">
+      <div class="container-fluid">
+        <div class="row g-4">
+          <!-- Contact Us -->
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <h5 class="f-title">Contact Us</h5>
+
+            <div class="f-text">
+              <div>Demo Store</div>
+              <div>42 Puffin Street 12345 Puffinville France</div>
+              <div>Hampshire</div>
+              <div>France, California 90002</div>
+              <div>United States</div>
+            </div>
+
+            <a class="f-link mt-3 d-inline-block" href="mailto:admin@gmail.com"
+              >admin@gmail.com</a
+            >
+
+            <div class="f-help mt-4">You Have Any Questions ? Call Us 24x7</div>
+            <div class="f-phone">0123456789</div>
+
+            <div class="f-social mt-4">
+              <a class="f-social-btn" href="#" aria-label="Facebook"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a class="f-social-btn" href="#" aria-label="X"
+                ><i class="bi bi-twitter-x"></i
+              ></a>
+              <a class="f-social-btn" href="#" aria-label="Instagram"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a class="f-social-btn" href="#" aria-label="LinkedIn"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Products -->
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <h5 class="f-title">Products</h5>
+            <ul class="f-list">
+              <li><a class="f-link" href="#">Prices drop</a></li>
+              <li><a class="f-link" href="#">New products</a></li>
+              <li><a class="f-link" href="#">Best sellers</a></li>
+            </ul>
+          </div>
+
+          <!-- Our Company -->
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <h5 class="f-title">Our Company</h5>
+            <ul class="f-list">
+              <li><a class="f-link" href="#">Delivery</a></li>
+              <li><a class="f-link" href="#">Legal Notice</a></li>
+              <li>
+                <a class="f-link" href="#">Terms and conditions of use</a>
+              </li>
+              <li><a class="f-link" href="#">About us</a></li>
+              <li><a class="f-link" href="#">Secure payment</a></li>
+              <li><a class="f-link" href="#">Contact us</a></li>
+              <li><a class="f-link" href="#">Sitemap</a></li>
+              <li><a class="f-link" href="#">Stores</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+            <h5 class="f-title">Newsletter</h5>
+            <p class="f-note">
+              Subscribe To Receive Inspiration, Ideas & News<br
+                class="d-none d-lg-block"
+              />
+              In Your Inbox
+            </p>
+
+            <form class="f-form" action="#" method="post">
+              <input
+                class="f-input"
+                type="email"
+                placeholder="Your email address"
+                required
+              />
+              <button class="f-btn" type="submit">SUBSCRIBE</button>
+
+              <label class="f-check">
+                <input type="checkbox" required />
+                <span
+                  >I agree to the terms and conditions and the privacy
+                  policy</span
+                >
+              </label>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <div class="container-fluid">
+          <div
+            class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3"
+          >
+            <div class="f-copy">© 2026 - Ecommerce software by PrestaShop</div>
+
+            <div class="f-payments">
+              <img
+                src="https://via.placeholder.com/52x34?text=VISA"
+                alt="VISA"
+              />
+              <img src="https://via.placeholder.com/52x34?text=CC" alt="Card" />
+              <img
+                src="https://via.placeholder.com/52x34?text=AMEX"
+                alt="AMEX"
+              />
+              <img
+                src="https://via.placeholder.com/52x34?text=MC"
+                alt="Mastercard"
+              />
+              <img
+                src="https://via.placeholder.com/52x34?text=Maestro"
+                alt="Maestro"
+              />
+              <img
+                src="https://via.placeholder.com/52x34?text=PayPal"
+                alt="PayPal"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll to top -->
+      <button
+        class="to-top"
+        type="button"
+        id="toTopBtn"
+        aria-label="Scroll to top"
+      >
+        <i class="bi bi-chevron-up"></i>
+      </button>
+    </footer>
+
+    <!-- ===== Left Offcanvas Menu ===== -->
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasMenu"
+      aria-labelledby="offcanvasMenuLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body p-0">
+        <div class="menu-list" id="mobileMenuAccordion">
+          <!-- Item with submenu: PLUS দেখাবে -->
+          <div class="menu-group">
+            <button
+              class="menu-item has-sub"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#subClothes"
+              aria-expanded="false"
+              aria-controls="subClothes"
+            >
+              <span>Clothes</span>
+              <span class="plus">+</span>
+            </button>
+
+            <div
+              id="subClothes"
+              class="collapse menu-sub"
+              data-bs-parent="#mobileMenuAccordion"
+            >
+              <a class="menu-sub-item" href="#">Formal Shirts</a>
+              <a class="menu-sub-item" href="#">Formal Trousers</a>
+              <a class="menu-sub-item" href="#">Hat</a>
+            </div>
+          </div>
+
+          <!-- Item without submenu: PLUS থাকবে না -->
+          <a class="menu-item" href="#"><span>Cap</span></a>
+
+          <!-- Another with submenu -->
+          <div class="menu-group">
+            <button
+              class="menu-item has-sub"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#subShoes"
+              aria-expanded="false"
+              aria-controls="subShoes"
+            >
+              <span>Shoes</span>
+              <span class="plus">+</span>
+            </button>
+
+            <div
+              id="subShoes"
+              class="collapse menu-sub"
+              data-bs-parent="#mobileMenuAccordion"
+            >
+              <a class="menu-sub-item" href="#">Sneakers</a>
+              <a class="menu-sub-item" href="#">Boots</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-bottom">
+          <div class="d-flex justify-content-center gap-4 mb-3">
+            <a href="#" class="mini-link">Wishlist</a>
+            <a href="#" class="mini-link">Compare</a>
+          </div>
+
+          <div class="d-flex justify-content-center gap-2 mb-3">
+            <button class="btn btn-outline-secondary btn-sm">EUR</button>
+            <button class="btn btn-outline-secondary btn-sm">SAR</button>
+            <button class="btn btn-dark btn-sm">USD</button>
+          </div>
+
+          <div class="lang-row">
+            <span class="lang-pill">EN</span>
+            <span class="lang-pill">FR</span>
+            <span class="lang-pill">ES</span>
+            <span class="lang-pill">IT</span>
+            <span class="lang-pill">DE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Right Offcanvas Cart ===== -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasCart"
+      aria-labelledby="offcanvasCartLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasCartLabel">
+          Shopping Cart (<span id="cartCountTitle">0</span>)
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <!-- Filled by JS -->
+        <div id="cartBody"></div>
+      </div>
+    </div>
+
+    <!-- jQuery (requested) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Bootstrap bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>
